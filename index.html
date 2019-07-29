@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Titillium+Web:700&display=swap');
+</style>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Train Tracker -->
+  <div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="text-center">Train Schedules & Timetables</h1>
+        <a href="https://www.youtube.com/watch?v=hv1dRbkmuHE" target="_blank">
+          <h2 class="text-center">C'Mon 'N Ride It (The Train)</h2>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <!-- Current Train-->
+        <div class="card mb-4">
+          <div class="card-header" id="card-special"> Current Train Schedule</div>
+          <div class="card-body">
+            <table class="table table-md table-hover" id="train-table">
+              <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency(min)</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody id="add-row">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Add Train  -->
+        <div class="card mb-4">
+          <div class="card-header" id="card-special">Add Train</div>
+          <div class="card-body">
+
+            <!-- Entry Form -->
+            <form>
+              <div class="form-group">
+                <label for="train-name-input">Train Name</label>
+                <input class="form-control" id="train-name-input" placeholder="The Fresh Express" type="text">
+              </div>
+              <div class="form-group">
+                <label for="destination-input">Destination</label>
+                <input class="form-control" id="destination-input" placeholder="Coolsville" type="text">
+              </div>
+              <div class="form-group">
+                <label for="firstTrain-input">First Train Time (HH:mm - military time)</label>
+                <input class="form-control" id="firstTrain" placeholder="" type="text">
+              </div>
+              <div class="form-group">
+                <label for="frequency-input">Frequency</label>
+                <input class="form-control" id="frequency" placeholder="" type="time">
+              </div>
+              <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/Users/summerstevenson/Desktop/Train Cmon/train.js"></script>
+
+</body>
+
+</html>

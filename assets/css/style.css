@@ -1,0 +1,18 @@
+.jumbotron {
+    text-align: center;
+    color:rgb(47, 234, 255) ;
+    background-image:url("../images/nighttram.jpg");
+    font-family: 'Titillium Web', sans-serif;
+
+}
+#card-special {
+    background-color:rgb(47, 234, 255);
+    border: 2px solid black;
+}
+
+#train-table th,
+    td {
+      display: inline-block;
+      width: 19%;
+    }
+    
